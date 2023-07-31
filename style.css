@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 0px 0px;
+    padding: 0px;
+}
+body {
+    width: 85%;
+    margin: 0 auto;
+    
+}
