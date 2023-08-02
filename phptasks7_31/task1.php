@@ -27,14 +27,21 @@
     ?>
     <p>Q2</p>
     <?php
-    $SampleNum= '085119'
-    $expectedNum = DateTime::createFromFormat('m-d-Y', $SampleNum)->format('Y-m-d');
-    echo "Sample Output: '$sampleNum'<br>";
-    echo "Expected Output : '$expectedNum'<br>";
+    // $SampleNum= '085119'
+    // $expectedNum = DateTime::createFromFormat('m-d-Y', $SampleNum)->format('Y-m-d');
+    // echo "Sample Output: '$sampleNum'<br>";
+    // echo "Expected Output : '$expectedNum'<br>";
     echo "-------------------------------------------------------------------";
     ?>
     <p>Q3</p>
     <?php
+    // $S="I am a full stack developer at orange coding academy";
+    // echo $S 
+    // if (strpos($S,'orange') !== false){ 
+    //   echo "Orange";
+    // }else {
+    //     echo "Word Found!";
+    // }
         echo "-------------------------------------------------------------------";
     ?>
     <p>Q4</p>
