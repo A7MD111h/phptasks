@@ -39,21 +39,15 @@
     // Write a PHP script to check the season depending on the inserted temperature if the temperature is below 20, we are in winter otherwise the season is summer.
     // Sample Input: 27
     // Sample Output: ‘It is summertime!’
-    date_default_timezone_set('Europe/London');
-    $hourNow=date("H");
-    switch ($hourNow){
-        case (($hourNow>=5) && ($hourNow<8)):
-            print 'It\'s early morning.'; 
-            break;
-        case (($hourNow>=9) && ($hourNow<=16)):
-            print ('Summer time!');
-            break;
-        default :
-            print ("It's late at night.");
-            break;
-
-    }
     
+    
+    function checkSeason($temperature) {
+        $season = ($temperature < 20) ? 'winter' : 'summertime';
+        return "It is $season!";
+    }
+    $temperature = 27;
+    $result = checkSeason($temperature);
+    echo $result;
     echo "<br>" ;
     echo "-------------------------------------------------------------------". "<br>";
 
@@ -64,17 +58,26 @@
     // Sample Input: [ firstInteger  =>  2 , secondInteger => 2]
     // Sample Output: ( 2 + 2 ) * 3 = 12
     // Sample Output: ‘It is summertime!’
-    function calculate($arrInput=[]){
-        if(count($arrInput)<2 || empty($arrInput)){return false;}
-        $firstInt=$secondInt=0;$result="";
-        foreach($arrInput as $key=>$value){
-            switch($key){
-                case 'firstInteger':
+   
+    function calculateSumAndTriple($firstInteger, $secondInteger) {
+        $sum = $firstInteger + $secondInteger;
+        $output = "";
 
-            }
+        if ($firstInteger === $secondInteger) {
+            $tripleSum = $sum * 3;
+            $output = "($firstInteger + $secondInteger) * 3 = $tripleSum";
+        } else {
+            $output = "($firstInteger + $secondInteger) = $sum";
         }
+
+        return $output;
     }
-    
+    $firstInteger = 2;
+    $secondInteger = 2;
+    $result = calculateSumAndTriple($firstInteger, $secondInteger);
+    echo $result;
+    echo "<br>" ;
+    echo "-------------------------------------------------------------------". "<br>";
 ?>
 
     <?php
@@ -87,15 +90,14 @@
     //Write PHP to check if the sum of the two given numbers equals 30, if the condition is true the return their sum otherwise return false
     // Sample Input: [ firstInteger  =>  10 , secondInteger => 10]
     // Sample Output: ‘false’
-    /** Function to check whether two integers are equal or not */
-    function compareIntegers ($inputArray) {
-        extract($inputArray);
-        return (int)$firstInteger === (int)$secondInteger;
-        /* Test Cases*/
-        # Case-1 : First integer is greater than the Second Integer. Expected output should be false
+    function checkSumEquals30($firstInteger, $secondInteger) {
+        $sum = $firstInteger + $secondInteger;
+        return ($sum === 30) ? $sum : 'false';
     }
-    
-    
+    $firstInteger = 10;
+    $secondInteger = 10;
+    $result = checkSumEquals30($firstInteger, $secondInteger);
+    echo $result;
     echo "<br>" ;
     echo "-------------------------------------------------------------------". "<br>";
 
@@ -236,7 +238,24 @@
     // <80	C
     // <90	B
     // <100	A
-    
+    function calculateGrade($scores) {
+        $average = array_sum($scores) / count($scores);
+        
+        if ($average < 60) {
+            return 'F';
+        } elseif ($average < 70) {
+            return 'D';
+        } elseif ($average < 80) {
+            return 'C';
+        } elseif ($average < 90) {
+            return 'B';
+        } else {
+            return 'A';
+        }
+    }
+    $scores = [60, 86, 95, 63, 55, 74, 79, 62, 50];
+    $grade = calculateGrade($scores);
+    echo $grade;
     echo "<br>" ;
     echo "-------------------------------------------------------------------". "<br>";
 

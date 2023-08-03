@@ -131,7 +131,6 @@
     }
     $Average = $sum / $a2;
     echo "Average Temperature is: $Average <br>";
-    // echo "List of seven lowest temperatures: "."<br>";
     $sorted_a1 =$a1;
     sort($sorted_a1);
     $lowest_a1 =array();
@@ -143,7 +142,6 @@
             break;
         }
     }
-    // echo "List of seven highest temperatures: ";
     $highest_a1 = array();
     $i = 0;
     foreach (array_reverse($sorted_a1 ) as $a1) {
@@ -288,32 +286,19 @@
     <p>Q13</p>
     <?php 
     // Write a PHP script to generate unique random 10 numbers within a specific range. 
-
     // Sample Input: (11, 20)
     // Sample Output: 17 16 13 20 14 19 18 15 11 12
     function generateUniqueRandomNumbers($min, $max, $count) {
-        // Create an array containing all numbers within the range
         $allNumbers = range($min, $max);
-    
         shuffle($allNumbers);
-    
-        // Get the first $count numbers from the shuffled array
         $randomNumbers = array_slice($allNumbers, 0, $count);
-    
         return $randomNumbers;
     }
-    
-    // Sample input
     $minRange = 11;
     $maxRange = 20;
     $numberOfRandomNumbers = 10;
-    
-    // Generate unique random numbers
     $randomNumbers = generateUniqueRandomNumbers($minRange, $maxRange, $numberOfRandomNumbers);
-    
-    // Output the result
     echo implode(' ', $randomNumbers);
-    
     echo "<br>";
     echo "------------------------------------------" . "<br>";
     echo "<br>";
@@ -321,16 +306,11 @@
     <p>Q14</p>
     <?php 
     // Write a PHP script that returns the lowest integer in the array  that is not 0. 
-
     // Sample Input: $array1 = array( 2, 0, 10, 12, 6) 
     // Sample Output:  2
-  
     $array1 = array(2, 0, 10, 12, 6);
-    // Initialize the variable to store the lowest integer
     $lowestInteger = null;
-
     foreach ($array1 as $num) {
-        // Check if the number is not equal to 0 and update the lowestInteger accordingly
         if ($num !== 0 && ($lowestInteger === null || $num < $lowestInteger)) {
             $lowestInteger = $num;
         }
