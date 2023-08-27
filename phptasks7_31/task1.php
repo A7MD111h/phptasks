@@ -322,22 +322,22 @@
   
 
 
-  // task 12.	Write a PHP script to insert a string at the specified position in a given string. 
-  function replaceAt($str, $pos, $newStr)
-  {
-    $newStr .= ' ';
-    $str = str_split($str);
-    array_splice($str, $pos, 0, $newStr);
-    return implode('', $str);
-  }
-  $str = 'The brown fox';
-  $newWord = 'quick';
-  echo "Original String: $str" . '<br>';
-  echo "the word to be inserted : $newWord" . '<br>';
-  $result = replaceAt($str, 4, $newWord);
-  echo "result: $result" . '<br>';
-  echo "<hr>";
-  echo "<hr>";
+    // task 12.	Write a PHP script to insert a string at the specified position in a given string. 
+      function replaceAt($str, $pos, $newStr)
+      {
+        $newStr .= ' ';
+        $str = str_split($str);
+        array_splice($str, $pos, 0, $newStr);
+        return implode('', $str);
+      }
+      $str = 'The brown fox';
+      $newWord = 'quick';
+      echo "Original String: $str" . '<br>';
+      echo "the word to be inserted : $newWord" . '<br>';
+      $result = replaceAt($str, 4, $newWord);
+      echo "result: $result" . '<br>';
+      echo "<hr>";
+      echo "<hr>";
 
   ?>
 
